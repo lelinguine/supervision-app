@@ -1,0 +1,1 @@
+select `alerte`, `type`, `couleur` from `message` inner join `installation` on message.installation_id=installation.id where message.type like 'vert' and installation.id=2;
