@@ -9,7 +9,6 @@ async function getVersion() {
 
         if (response) {
             console.log('Service version', response.version);
-            console.log('PHP version', response.php);
         } else {
             console.error('Erreur lors de la récupération de la version');
         }
