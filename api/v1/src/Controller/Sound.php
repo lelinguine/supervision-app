@@ -4,7 +4,7 @@ function postSound($request, $response)
 {
     //socket receive sound level dB
     //$son = runSocket("!MEAS");
-    $son = rand(40, 60);
+    $son = rand(40, 80);
     //........................................................................
     //test is int
     if(is_numeric($son))

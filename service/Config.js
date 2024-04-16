@@ -1,0 +1,1 @@
+const apiUrl = "https://valentinluginbuhl.fr/supervision-app/api/v1";

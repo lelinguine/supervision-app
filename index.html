@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervision</title>
+    <link href="./view/assets/logo-dark.png" rel="icon" type="image/png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="./view/style/index.css">
+</head>
+<body>
+    <section>
+        <div class="connect-container">
+            <img src="view/assets/logo-dark.png">
+            <div class="connect-box">
+                <label class="connect-label">Login</label>
+                <input type="text" class="connect-input" id="identifiant" value="jeanmartin"/>
+            </div>
+            <div class="connect-box">
+                <label class="connect-label">Password</label>
+                <input type="password" autocomplete="on" class="connect-input" id="password" value="martin"/>
+            </div>                
+            <button id="connect-btn">Connect</button>
+            <p class="connect-error">error</p>
+        </div>
+        <div class="version-container">
+            <p>version 2.0 (alpha) - @lelinguine</p>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./service/Config.js"></script>
+    <script src="./service/Cookie.js"></script>
+    <script src="./service/Version.js"></script>
+    <script src="./service/Connect.js"></script>
+    <script>
+        document.getElementById('connect-btn').addEventListener('click', function() {
+            getConnect();
+        });
+
+        document.getElementById('password').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                getConnect();
+            }
+        });
+    </script>
+</body>
+</html>

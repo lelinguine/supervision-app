@@ -1,0 +1,42 @@
+.container_Sound_Anim {
+    display: flex;
+    flex-direction: row;
+    height: 20vh;
+}
+
+.Show_DB_Num {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.LB_Decibel {
+    font-size : 18px;
+    color:white;
+    position: relative;
+}
+
+/*------- animate -------*/
+
+.box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Snd_bar_1,.Snd_bar_2,.Snd_bar_3,.Snd_bar_4,.Snd_bar_5,.Snd_bar_6,.Snd_bar_7,.Snd_bar_8,.Snd_bar_9,.Snd_bar_10 {
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 10px;
+}
+
+.Color_Snd_Bar {
+    background-color: white;
+}
