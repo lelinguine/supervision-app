@@ -1,25 +1,25 @@
 async function getMeasure() {
     const requestData = {
-        token: getCookie('token')
+        data: {
+            user: {
+                token: getCookie('token')
+            }
+        },
     };
 
     try {
         const response = await $.ajax({
-            url: apiUrl + "/son",
+            url: apiUrl + "/metric",
             type: 'POST',
             dataType: 'json',
             contentType: 'application/json',
             data: JSON.stringify(requestData)
         });
-
-        if (response) {
-            return response.valeur;
-        } else {
-            console.error('Erreur lors de la r�ception des donn�es');
-        }
+        return response.data.metric.level;
     } catch (error) {
-        console.error('Erreur lors de la requ�te POST:', error.message);
+        return 0;
     }
+    
 }
 
 getMeasure();

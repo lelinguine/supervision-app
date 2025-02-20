@@ -19,7 +19,7 @@ require '../src/Controller/dev.php';
 //........................................................................
 return function (App $app)
 {
-    $app->group('/supervision-app/service/v1', function ($app)
+    $app->group('/service/v1', function ($app)
     {
         //........................................................................
         //dev

@@ -1,7 +1,11 @@
 async function getConnect() {
     const requestData = {
-        identifiant: $('#identifiant').val(),
-        password: $('#password').val()
+        data: {
+            user : {
+                pseudo: $('#pseudo').val(),
+                password: $('#password').val()
+            }
+        }
     };
 
     try {
@@ -11,12 +15,11 @@ async function getConnect() {
             contentType: 'application/json',
             data: JSON.stringify(requestData),
         });
-
-        if (response && response.token) {
-            setCookie('token', response.token, 7);
+        if (response.data.user.token) {
+            setCookie('token', response.data.user.token, 7);
             window.location.href = 'view/';
-        } else {
         }
     } catch (error) {
+        console.error(error);
     }
 }

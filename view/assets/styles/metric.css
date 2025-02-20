@@ -1,14 +1,4 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-}
+@import './base.css';
 
 ::selection {
     background-color: black;
@@ -22,6 +12,8 @@ section {
     justify-content: center;
     align-items: center;
     height: 100%;
+    background-color: black;
+    color: white;
 }
 
 /* --------------------------- icon --------------------------- */
@@ -87,17 +79,4 @@ button:hover {
     color: #FF6666;
     font-weight: 500;
     display: none;
-}
-
-/* --------------------------- version --------------------------- */
-
-.version-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-weight: 500;
 }

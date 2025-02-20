@@ -9,7 +9,7 @@ function randomIntFromInterval(min, max) {
 }
 
 async function updateSoundValue() {
-    sound_value = await getMeasure();
+    sound_value = await getMeasure() || 0;
     $('#id_dB_live').text(`${sound_value}db`);
     return sound_value;
 }

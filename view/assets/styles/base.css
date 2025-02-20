@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -10,11 +17,6 @@ body {
     font-weight: 600;
 }
 
-::selection {
-    background-color: white;
-    color: black;
-}
-
 /* --------------------------- section --------------------------- */
 
 section {
@@ -22,8 +24,6 @@ section {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: black;
-    color: white;
 }
 
 /* --------------------------- version --------------------------- */

@@ -2,18 +2,13 @@ async function getVersion() {
 
     try {
         const response = await $.ajax({
-            url: apiUrl + "/version",
+            url: apiUrl + "/",
             type: 'GET',
             dataType: 'json'
         });
-
-        if (response) {
-            console.log('Service version', response.version);
-        } else {
-            console.error('Erreur lors de la récupération de la version');
-        }
+        console.log('Service version', response.data.app.version);
     } catch (error) {
-        console.error('Erreur lors de la récupération de la version:', error.message);
+        console.error('Erreur de connexion au service', error.message);
     }
 }
 

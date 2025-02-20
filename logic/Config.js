@@ -1,1 +1,1 @@
-const apiUrl = "https://valentinluginbuhl.fr/supervision-app/service/v1";
+const apiUrl = "http://localhost:8080/service/v2";
