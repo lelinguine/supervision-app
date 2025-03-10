@@ -12,7 +12,7 @@ use App\Application\Actions\User\ConnectUserAction;
 use App\Application\Actions\User\UserMetricRetrievalAction;
 
 return function (App $app) {
-    $app->group('/service/v2', function ($app)
+    $app->group('', function ($app)
     {
         $app->options('/{routes:.*}', function (Request $request, Response $response) {
             return $response;
@@ -29,6 +29,18 @@ return function (App $app) {
             $response->getBody()->write(json_encode(['message' => $message, 'data' => $data]));
             return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
         });
+
+        $app->get('/app', function (Request $request, Response $response) {
+            $html = file_get_contents(__DIR__ . '/../public/index.html');
+            $response->getBody()->write($html);
+            return $response->withHeader('Content-Type', 'text/html');
+        }); 
+        
+        $app->get('/viex', function (Request $request, Response $response) {
+            $html = file_get_contents(__DIR__ . '/../public/view/index.html');
+            $response->getBody()->write($html);
+            return $response->withHeader('Content-Type', 'text/html');
+        }); 
 
         $app->post('/dev', function (Request $request, Response $response) {
             $data = [

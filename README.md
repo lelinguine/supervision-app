@@ -1,10 +1,30 @@
 # supervision-app
 
-## 🔧 - Docker
-docker build -t supervision-image .
-docker run -d -p 8080:80 --name supervision-app supervision-image
+Use this skeleton application to quickly setup and start working on a new Slim Framework 4 application. This application uses the latest Slim 4 with Slim PSR-7 implementation and PHP-DI container implementation. It also uses the Monolog logger.
 
-docker logs -f supervision-app
+This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+
+## 💡 - Start
+You can run
+```bash
+php -S localhost:8080 -t public
+```
+
+## 🐋 - Docker
+Or you can run these commands:
+```bash
+docker build -t supervision-image .
+docker run -d -p 8080:8080 --name supervision-app supervision-image
+```
+After that, open `http://localhost:8080` in your browser.
+
+## 💾 - Datas
+Run this to create and add datas to database.sqlite
+```bash
+php storage/scripts/Seeder.php
+```
+
+That's it! Now go build something cool.
 
 ## 🔧 - Tools
 https://elmah.io/tools/base64-image-encoder/<br>

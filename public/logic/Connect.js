@@ -17,7 +17,7 @@ async function getConnect() {
         });
         if (response.data.user.token) {
             setCookie('token', response.data.user.token, 7);
-            window.location.href = 'view/';
+            window.location.href = apiUrl + '/view';
         }
     } catch (error) {
         console.error(error);
