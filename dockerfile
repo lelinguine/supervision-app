@@ -13,11 +13,11 @@ WORKDIR /var/www/html
 # Copie des fichiers du projet vers le conteneur
 COPY . /var/www/html/
 
-# Installation de Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# # Installation de Composer
+# COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Installation des dépendances de Slim Framework
-RUN composer install --no-dev --optimize-autoloader
+# # Installation des dépendances de Slim Framework
+# RUN composer install --no-dev --optimize-autoloader
 
 # Attribution des permissions
 RUN chown -R www-data:www-data /var/www/html && \

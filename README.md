@@ -10,6 +10,12 @@ You can run
 php -S localhost:8080 -t public
 ```
 
+## 🎼 - Composer
+Run this below to install dependencies
+```bash
+composer install
+```
+
 ## 🐋 - Docker
 Or you can run these commands:
 ```bash
