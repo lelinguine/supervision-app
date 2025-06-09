@@ -36,22 +36,22 @@ return function (App $app) {
             return $response->withHeader('Content-Type', 'text/html');
         }); 
         
-        $app->get('/viex', function (Request $request, Response $response) {
+        $app->get('/view', function (Request $request, Response $response) {
             $html = file_get_contents(__DIR__ . '/../public/view/index.html');
             $response->getBody()->write($html);
             return $response->withHeader('Content-Type', 'text/html');
         }); 
 
-        $app->post('/dev', function (Request $request, Response $response) {
-            $data = [
-                $request->getParsedBody(),
-                'result' => hash_equals(hash_hmac($_ENV['HASH_ALGO'], 'martin' , $_ENV['HASH_SECRET'], false), 'ab6512a76dee1c57aa10e9be4f44b459dec319a6e9eea31b5aa3a8be3964d5d1'),
-                //'result' => hash_hmac($_ENV['HASH_ALGO'], 'password' , $_ENV['HASH_SECRET'], false),
-            ];
-            $message = 'Connexion réussie.';
-            $response->getBody()->write(json_encode(['message' => $message, 'data' => $data]));
-            return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
-        });
+        // $app->post('/dev', function (Request $request, Response $response) {
+        //     $data = [
+        //         $request->getParsedBody(),
+        //         'result' => hash_equals(hash_hmac($_ENV['HASH_ALGO'], 'martin' , $_ENV['HASH_SECRET'], false), 'ab6512a76dee1c57aa10e9be4f44b459dec319a6e9eea31b5aa3a8be3964d5d1'),
+        //         'result' => hash_hmac($_ENV['HASH_ALGO'], 'dubois' , $_ENV['HASH_SECRET'], false),
+        //     ];
+        //     $message = 'Connexion réussie.';
+        //     $response->getBody()->write(json_encode(['message' => $message, 'data' => $data]));
+        //     return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+        // });
 
         $app->post('/connect', ConnectUserAction::class);
         $app->post('/metric', UserMetricRetrievalAction::class);
