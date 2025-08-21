@@ -7,7 +7,7 @@ This skeleton application was built for Composer. This makes setting up a new Sl
 ## 💡 - Start
 You can run
 ```bash
-php -S localhost:8080 -t public
+php -S localhost:1800 -t public
 ```
 
 ## 🎼 - Composer
@@ -20,9 +20,9 @@ composer install
 Or you can run these commands:
 ```bash
 docker build -t supervision-image .
-docker run -d -p 8080:8080 --name supervision-app supervision-image
+docker run -d -p 1800:1800 --name supervision-app supervision-image
 ```
-After that, open `http://localhost:8080` in your browser.
+After that, open `http://localhost:1800` in your browser.
 
 ## 💾 - Datas
 Run this to create and add datas to database.sqlite
